@@ -34,7 +34,7 @@ OuputWorkspace = "../../../Data/BatchClipData/OuputFolder"
 
 for x in Cliplist:
     for y in ClipingList:
-        arcpy.Clip_analysis(Clipfeature +"/" + x, Clipingfeature +"/" + y, OuputWorkspace +"/"+x[:-4]+y)
+        arcpy.Clip_analysis(Clipfeature +"/" + x, Clipingfeature +"/" + y, OuputWorkspace +"/"+y[:-4]+"_"+x)
 
 
 
