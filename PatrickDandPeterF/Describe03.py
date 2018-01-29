@@ -34,7 +34,7 @@ import arcpy
 
 if len(sys.argv) != 2:
 
-    print "Usage:  Describe03.py <FeatureClassName>"
+    arcpy.AddMessage ("Usage:  Describe03.py <FeatureClassName>")
 
     sys.exit()
 
