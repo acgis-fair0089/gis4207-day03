@@ -15,9 +15,8 @@ class Toolbox(object):
 class BasicDescribe(object):
     def BasicDescribe(self):
         """Define the tool (tool name is the name of the class)."""
-	self.name = "BasicDescribe"
         self.label = "Basic Describe associated with Describe03.py"
-        self.description = ""
+        self.description = " "
         self.canRunInBackground = False
 
     def getParameterInfo(self):
