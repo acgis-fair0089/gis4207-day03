@@ -29,6 +29,10 @@ InWorkspace = sys.argv[1]
 ClipWorkspace = sys.argv[2]
 OuputWorkspace = sys.argv[3]
 
+if not arcpy.Exists(InWorkspace):
+        print InWorkspace + " does not exist"
+        sys.exit()
+
 
 arcpy.env.workspace = InWorkspace
 Cliplist = arcpy.ListFeatureClasses()
@@ -36,10 +40,11 @@ Cliplist = arcpy.ListFeatureClasses()
 arcpy.env.workspace = ClipWorkspace
 ClipingList = arcpy.ListFeatureClasses()
 
+for fcin in Cliplist:
+    for fcclip in ClipingList:
+        arcpy.Clip_analysis(os.path.join(InWorkspace,fcin), os.path.join(ClipWorkspace, fcclip), os.path.join(OuputWorkspace, fcclip[:-4]+"_"+fcin))
 
-for x in Cliplist:
-    for y in ClipingList:
-        arcpy.Clip_analysis(InWorkspace +"/" + x, ClipWorkspace +"/" + y, OuputWorkspace +"/"+y[:-4]+"_"+x)
+
 
 
 
